@@ -1,14 +1,25 @@
-import "./style/global.css"
+import "./style/global.css";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import Map from "./pages/Map"
+import Search from "./pages/Search";
+import Chat from "./pages/Chat";
+import Profile from "./pages/Profile";
 
 function App() {
-
   return (
-    <>
-      <div>
-       <h1 className="text-3xl font-bold underline">Tailwind is set up</h1>
-      </div>
-          </>
-  )
+    <div className="w-screen h-screen">
+      <Navbar />
+        <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/map" element={<Map />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/chat" element={<Chat />} />
+        <Route path="/profile" element={<Profile />} />
+        </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;

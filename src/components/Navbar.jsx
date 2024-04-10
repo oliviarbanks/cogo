@@ -4,11 +4,21 @@ const Navbar = () => {
   return (
     <nav aria-label="Main Navigation">
       <div role="menu">
-        <Link to="/" role="menuitem">Home</Link>
-        <Link to="/map" role="menuitem">Map</Link>
-        <Link to="/search" role="menuitem">Search</Link>
-        <Link to="/chat" role="menuitem">Chat</Link>
-        <Link to="/profile" role="menuitem">Profile</Link>
+        <Link to="/" role="menuitem">
+          Home
+        </Link>
+        <Link to="/map" role="menuitem">
+          Map
+        </Link>
+        <Link to="/search" role="menuitem">
+          Search
+        </Link>
+        <Link to="/chat" role="menuitem">
+          Chat
+        </Link>
+        <Link to="/profile" role="menuitem">
+          Profile
+        </Link>
       </div>
     </nav>
   );

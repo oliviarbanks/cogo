@@ -1,5 +1,5 @@
 
-const Searhbar = ({ imageSrc, placeholder}) => {
+const Searchbar = ({ imageSrc, placeholder}) => {
   return (
       <div>
       <img src={imageSrc} alt="Search" />
@@ -8,4 +8,4 @@ const Searhbar = ({ imageSrc, placeholder}) => {
   )
 }
 
-export default Searhbar
+export default Searchbar

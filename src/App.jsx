@@ -2,8 +2,9 @@ import "./style/global.css";
 import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
+import Map from "./pages/Map"
 import Search from "./pages/Search";
-import Trips from "./pages/Trips";
+import Chat from "./pages/Chat";
 import Profile from "./pages/Profile";
 
 function App() {
@@ -11,10 +12,11 @@ function App() {
     <div className="w-screen h-screen">
       <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/Trips" element={<Trips />} />
-          <Route path="/Profile" element={<Profile />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/map" element={<Map />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/chat" element={<Chat />} />
+        <Route path="/profile" element={<Profile />} />
         </Routes>
     </div>
   );

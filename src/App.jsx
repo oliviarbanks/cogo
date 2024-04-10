@@ -8,16 +8,15 @@ import Profile from "./pages/Profile";
 
 function App() {
   return (
-    <>
-  <Navbar />
+    <div className="w-screen h-screen">
+      <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
           <Route path="/Trips" element={<Trips />} />
           <Route path="/Profile" element={<Profile />} />
         </Routes>
-    
-    </>
+    </div>
   );
 }
 

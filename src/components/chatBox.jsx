@@ -1,6 +1,7 @@
+import BottomDrawer from "./BottomDrawer"
 import ChatMessageList from "./chatMessageList"
 
-const ChatBox = ({tripTitle, tripId}) => {
+const ChatBox = ({ tripTitle, tripId, isOpen }) => {
 
     const chat = [
         {
@@ -21,9 +22,9 @@ const ChatBox = ({tripTitle, tripId}) => {
     ]
     // React Query chat query
     return (<>
-        <div className=" flex flex-col rounded-t-md h-[40vh] w-screen">
-            <h2> {tripTitle} </h2>
-            <ChatMessageList messages = {chat} ></ChatMessageList>
+        <div className=" flex flex-col justify-center">
+            <h2 className=""> {tripTitle} </h2>
+            <ChatMessageList messages={chat} ></ChatMessageList>
         </div>
     </>)
 }

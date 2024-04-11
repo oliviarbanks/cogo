@@ -1,4 +1,4 @@
-import ChatBubble from "./chatBubble";
+import ChatBubble from "./ChatBubble"
 
 const ChatMessageList = ({messages}) => {
     const user = useUser()

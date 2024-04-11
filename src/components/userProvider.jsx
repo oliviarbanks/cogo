@@ -8,7 +8,7 @@ const backendUrl = import.meta.env.VITE_BACKEND_URL;
 export const UserContext = createContext({})
 
 
-export function userProvider({ children }) {
+export function UserProvider({ children }) {
     const [user, setUser] = useState({});
     
     return (

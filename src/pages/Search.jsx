@@ -50,7 +50,7 @@ const Search = () => {
             <path d="M9.60864 1L1.12336 9.48528L9.60864 17.9706" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </Link>
-        <h1 className="text-[24px] font-[400] tracking-[1.5px]">Discover</h1>
+        <h1 className="text-[24px] font-[600] tracking-[1.5px]">Discover</h1>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g id="Icons">
             <g id="Group 2">
@@ -63,7 +63,7 @@ const Search = () => {
         </svg>
       </div>
       {step === 0 && <DiscoverPage1 categories={categories} handleNextStep={handleNextStep} />}
-      {step === 1 && <DiscoverPage2 categories={categories} />}
+      {step === 1 && <DiscoverPage2 categories={categories} handleNextStep={handleNextStep} />}
     </div>
   )
 };

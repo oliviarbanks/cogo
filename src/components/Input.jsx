@@ -1,12 +1,12 @@
 const Input = ({
   label,
-  type = 'text',
+  type = "text",
   name,
   value,
   onChange,
-  placeholder = '',
-  error = '',
-  className = '',
+  placeholder = "",
+  error = "",
+  className = "",
 }) => {
   return (
     <div>
@@ -21,7 +21,7 @@ const Input = ({
         onChange={onChange}
         placeholder={placeholder}
         className={`flex w-[100%] px-4 py-3 mt-2 items-center gap-2 rounded-md border border-gray-300 bg-white placeholder:text-[16px] placeholder:font-[400] placeholder:text-[#A0A0A0] text-black focus:outline-none focus:ring ${
-          error ? 'border-red-500' : 'border-gray-300'
+          error ? "border-red-500" : "border-gray-300"
         } ${className}`}
       />
       {error && <div className="text-red-500 text-sm">{error}</div>}

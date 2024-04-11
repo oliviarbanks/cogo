@@ -1,18 +1,15 @@
-import ResultsCard from "./ResultsCard"
+import ResultsCard from "./ResultsCard";
 
-const ResultsList = ({results}) => {
+const ResultsList = ({ results }) => {
   return (
-           <div >
-            <div >
-                {results.map((results) =>
-                {
-                    return (
-                        <ResultsCard results={results} />
-                    )
-                })}
-            </div>
-        </div>
-  )
-}
+    <div>
+      <div>
+        {results.map((results) => {
+          return <ResultsCard results={results} />;
+        })}
+      </div>
+    </div>
+  );
+};
 
-export default ResultsList
+export default ResultsList;

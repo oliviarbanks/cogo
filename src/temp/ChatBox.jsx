@@ -1,5 +1,5 @@
-import DrawerWrapper from './DrawerWrapper'
-import ChatMessageList from './chatMessageList'
+import DrawerWrapper from '../components/DrawerWrapper'
+import ChatMessageList from './ChatMessageList'
 
 const ChatBox = ({ tripTitle, tripId, isOpen }) => {
 

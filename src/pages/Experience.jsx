@@ -1,6 +1,21 @@
+import { useState } from "react"
+import ShareModal from "../components/ShareModal"
+
 export default function Experience() {
+    const [shareModal, setShareModal] = useState(false)
+
+    const handleOpenModal = (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        setShareModal(true)
+    }
     return (
-        <div className="text-black h-full flex flex-col items-start bg-white">
+        <div
+            onClick={() => setShareModal(false)}
+            className="text-black h-full flex flex-col items-start bg-white relative">
+            {shareModal &&
+                <ShareModal />
+            }
             <div className="w-full">
                 <img src="/images/experience1.png" />
             </div>
@@ -36,7 +51,7 @@ export default function Experience() {
                         <div className="flex gap-[12px] items-center">
                             <p className="text-[#515151] text-[16px] font-[700]">7:00 AM</p>
                             <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path id="clock (1)" opacity="0.6" d="M8.6607 0.644531C7.10891 0.644531 5.59196 1.10469 4.3017 1.96682C3.01143 2.82895 2.00579 4.05433 1.41194 5.488C0.818097 6.92167 0.66272 8.49923 0.965459 10.0212C1.2682 11.5432 2.01546 12.9412 3.11274 14.0385C4.21002 15.1358 5.60805 15.883 7.13002 16.1858C8.652 16.4885 10.2296 16.3331 11.6632 15.7393C13.0969 15.1454 14.3223 14.1398 15.1844 12.8495C16.0465 11.5593 16.5067 10.0423 16.5067 8.49053C16.5046 6.41029 15.6773 4.41586 14.2063 2.94491C12.7354 1.47396 10.7409 0.646649 8.6607 0.644531V0.644531ZM12.3917 12.5445C12.3311 12.6052 12.259 12.6534 12.1798 12.6863C12.1005 12.7191 12.0155 12.736 11.9297 12.736C11.8439 12.736 11.7589 12.7191 11.6796 12.6863C11.6004 12.6534 11.5283 12.6052 11.4677 12.5445L8.1987 9.27953C8.13781 9.21899 8.0895 9.147 8.05655 9.06771C8.02359 8.98842 8.00665 8.9034 8.0067 8.81753V4.56753C8.0067 4.39408 8.0756 4.22773 8.19825 4.10508C8.3209 3.98243 8.48725 3.91353 8.6607 3.91353C8.83415 3.91353 9.0005 3.98243 9.12315 4.10508C9.2458 4.22773 9.3147 4.39408 9.3147 4.56753V8.54453L12.3927 11.6215C12.4534 11.6822 12.5016 11.7542 12.5344 11.8335C12.5673 11.9127 12.5842 11.9977 12.5842 12.0835C12.5842 12.1693 12.5673 12.2543 12.5344 12.3336C12.5016 12.4129 12.4534 12.4849 12.3927 12.5455L12.3917 12.5445Z" fill="#F539B7" fill-opacity="0.6" />
+                                <path id="clock (1)" opacity="0.6" d="M8.6607 0.644531C7.10891 0.644531 5.59196 1.10469 4.3017 1.96682C3.01143 2.82895 2.00579 4.05433 1.41194 5.488C0.818097 6.92167 0.66272 8.49923 0.965459 10.0212C1.2682 11.5432 2.01546 12.9412 3.11274 14.0385C4.21002 15.1358 5.60805 15.883 7.13002 16.1858C8.652 16.4885 10.2296 16.3331 11.6632 15.7393C13.0969 15.1454 14.3223 14.1398 15.1844 12.8495C16.0465 11.5593 16.5067 10.0423 16.5067 8.49053C16.5046 6.41029 15.6773 4.41586 14.2063 2.94491C12.7354 1.47396 10.7409 0.646649 8.6607 0.644531V0.644531ZM12.3917 12.5445C12.3311 12.6052 12.259 12.6534 12.1798 12.6863C12.1005 12.7191 12.0155 12.736 11.9297 12.736C11.8439 12.736 11.7589 12.7191 11.6796 12.6863C11.6004 12.6534 11.5283 12.6052 11.4677 12.5445L8.1987 9.27953C8.13781 9.21899 8.0895 9.147 8.05655 9.06771C8.02359 8.98842 8.00665 8.9034 8.0067 8.81753V4.56753C8.0067 4.39408 8.0756 4.22773 8.19825 4.10508C8.3209 3.98243 8.48725 3.91353 8.6607 3.91353C8.83415 3.91353 9.0005 3.98243 9.12315 4.10508C9.2458 4.22773 9.3147 4.39408 9.3147 4.56753V8.54453L12.3927 11.6215C12.4534 11.6822 12.5016 11.7542 12.5344 11.8335C12.5673 11.9127 12.5842 11.9977 12.5842 12.0835C12.5842 12.1693 12.5673 12.2543 12.5344 12.3336C12.5016 12.4129 12.4534 12.4849 12.3927 12.5455L12.3917 12.5445Z" fill="#F539B7" fillOpacity="0.6" />
                             </svg>
                         </div>
                     </div>
@@ -52,10 +67,10 @@ export default function Experience() {
                         <img src="/images/person2.png" className="rounded-full w-[40px] aspect-square" />
                         <img src="/images/person3.png" className="rounded-full w-[40px] aspect-square" />
                         <img src="/images/person4.png" className="rounded-full w-[40px] aspect-square" />
-                        <div className="relative w-[40px]">
+                        <div className="relative w-[40px]" onClick={(e) => handleOpenModal(e)}>
                             <svg className="" width="40" height="40" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g id="Ellipse 31">
-                                    <path id="Vector" d="M20.5 40.5C31.5457 40.5 40.5 31.5457 40.5 20.5C40.5 9.4543 31.5457 0.5 20.5 0.5C9.4543 0.5 0.5 9.4543 0.5 20.5C0.5 31.5457 9.4543 40.5 20.5 40.5Z" stroke="#009FF5" stroke-dasharray="3 3" />
+                                    <path id="Vector" d="M20.5 40.5C31.5457 40.5 40.5 31.5457 40.5 20.5C40.5 9.4543 31.5457 0.5 20.5 0.5C9.4543 0.5 0.5 9.4543 0.5 20.5C0.5 31.5457 9.4543 40.5 20.5 40.5Z" stroke="#009FF5" strokeDasharray="3 3" />
                                 </g>
                             </svg>
                             <svg className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -66,12 +81,12 @@ export default function Experience() {
                 </div>
                 <div className="flex flex-col items-start pb-[24px] gap-[4px]">
                     <h2 className="font-[400] text-[14px]">Price</h2>
-                    <p className="text-[16px] font-[700]">$15/Person</p>
+                    <p className="text-[16px] font-[700] text-[#515151]">$15/Person</p>
                 </div>
                 <div className="flex flex-col items-start pb-[24px] gap-[4px]">
                     <div className="flex items-center justify-between w-full">
-                        <h2 className="font-[700] text-[16px]">Map</h2>
-                        <p className="text-[14px] font-[400]">{`10 minutes (0.2 miles)`}</p>
+                        <h2 className="font-[700] text-[16px] text-[#515151]">Map</h2>
+                        <p className="text-[14px] font-[400] text-[#515151]">{`10 minutes (0.2 miles)`}</p>
                     </div>
                     <img src="/images/map1.png" />
                 </div>

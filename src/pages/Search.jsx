@@ -63,7 +63,7 @@ const Search = () => {
         </svg>
       </div>
       {step === 0 && <DiscoverPage1 categories={categories} handleNextStep={handleNextStep} />}
-      {step === 1 && <DiscoverPage2 categories={categories} />}
+      {step === 1 && <DiscoverPage2 categories={categories} handleNextStep={handleNextStep} />}
     </div>
   )
 };

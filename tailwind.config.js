@@ -7,6 +7,9 @@ export default {
       fontFamily: {
         sans: ['"Inter"', 'sans-serif'],
       },
+      boxShadow: {
+        searchField: "0px 8px 12px 0px rgba(0, 0, 0, 0.16)"
+      },
       fontSize: {
         'xs': '.75rem',
         'sm': '.875rem',
@@ -48,6 +51,7 @@ export default {
         'neon-pink': '#f54e95',
         // Neon blue (optional):
         'neon-blue': '#439bd5',
+        'primary-pink': '#F539B7'
     },
   },
 },

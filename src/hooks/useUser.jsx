@@ -1,4 +1,3 @@
-import { UserContext } from "../components/UserProvider";
 import { useContext } from "react";
 
 export const useUser = () => {

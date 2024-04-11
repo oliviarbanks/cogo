@@ -6,6 +6,7 @@ import Map from "./pages/Map";
 import Search from "./pages/Search";
 import Profile from "./pages/Profile";
 import Experience from "./pages/Experience";
+import ChatBox from "./components/ChatBox";
 
 function App() {
   return (

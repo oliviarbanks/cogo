@@ -1,7 +1,8 @@
 import ChatBubble from "./ChatBubble"
+import useUser from '../hooks/useUser'
 
 const ChatMessageList = ({messages}) => {
-    const user = useUser()
+    const user = useUser();
     const userStyle = " ml-auto";
     const otherStyle = "mr-auto";
     return (<>

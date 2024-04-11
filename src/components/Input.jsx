@@ -1,5 +1,4 @@
-
-const InputField = ({
+const Input = ({
   label,
   type = 'text',
   name,
@@ -10,8 +9,8 @@ const InputField = ({
   className = '',
 }) => {
   return (
-    <div className="mb-4">
-      <label htmlFor={name} className="block text-gray-700 font-bold mb-2">
+    <div>
+      <label htmlFor={name} className="text-[14px]">
         {label}
       </label>
       <input
@@ -21,7 +20,7 @@ const InputField = ({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className={`shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring ${
+        className={`flex w-[100%] px-4 py-3 mt-2 items-center gap-2 rounded-md border border-gray-300 bg-white placeholder:text-[16px] placeholder:font-[400] placeholder:text-[#A0A0A0] text-black focus:outline-none focus:ring ${
           error ? 'border-red-500' : 'border-gray-300'
         } ${className}`}
       />
@@ -30,4 +29,4 @@ const InputField = ({
   );
 };
 
-export default InputField;
+export default Input;

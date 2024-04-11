@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav aria-label="Main Navigation">
+    <nav className="fixed bottom-0 w-full h-[60px] bg-red-500" aria-label="Main Navigation ">
       <div role="menu">
         <Link to="/" role="menuitem">
           Home

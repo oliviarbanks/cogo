@@ -13,7 +13,7 @@ const Button = ({
       onClick={onClick}
       disabled={disabled}
       className={`
-        flex m-3 bg-white text-black text-lg font-bold rounded-full justify-center items-center px-20 py-half 
+        flex m-1 bg-white text-black text-lg font-bold rounded-full justify-center items-center px-20 py-half 
         ${className} ${loading && 'is-loading'}`}
         >
       {loading && <span className="spinner-border spinner-border-sm"></span>}

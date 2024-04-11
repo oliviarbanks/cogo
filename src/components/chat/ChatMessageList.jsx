@@ -1,5 +1,5 @@
 import ChatBubble from "./ChatBubble"
-import useUser from '../hooks/useUser'
+import { useUser } from "../../hooks/useUser";
 
 const ChatMessageList = ({messages}) => {
     const user = useUser();

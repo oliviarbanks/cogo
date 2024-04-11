@@ -13,9 +13,6 @@ const Navbar = () => {
         <Link to="/search" role="menuitem">
           Search
         </Link>
-        <Link to="/chat" role="menuitem">
-          Chat
-        </Link>
         <Link to="/profile" role="menuitem">
           Profile
         </Link>

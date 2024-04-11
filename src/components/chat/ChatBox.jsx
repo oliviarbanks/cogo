@@ -1,4 +1,4 @@
-import DrawerWrapper from '../components/DrawerWrapper'
+import DrawerWrapper from '../DrawerWrapper'
 import ChatMessageList from './ChatMessageList'
 
 const ChatBox = ({ tripTitle, tripId, isOpen }) => {
@@ -22,7 +22,7 @@ const ChatBox = ({ tripTitle, tripId, isOpen }) => {
     ]
     // React Query chat query
     return (<>
-        <DrawerWrapper isOpen={false}>
+        <DrawerWrapper isOpen={true}>
             <div className=" flex flex-col justify-center bg-red-500">
                 <h2 className=""> {tripTitle} </h2>
                 <ChatMessageList messages={chat} ></ChatMessageList>

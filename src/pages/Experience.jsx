@@ -71,7 +71,7 @@ export default function Experience() {
                 <div className="flex flex-col items-start pb-[24px] gap-[4px]">
                     <div className="flex items-center justify-between w-full">
                         <h2 className="font-[700] text-[16px]">Map</h2>
-                        <p className="text-[14px] font-[400]">{`10 minute (0.2 miles)`}</p>
+                        <p className="text-[14px] font-[400]">{`10 minutes (0.2 miles)`}</p>
                     </div>
                     <img src="/images/map1.png" />
                 </div>

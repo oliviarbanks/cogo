@@ -1,5 +1,6 @@
+import ChatBox from "../components/ChatBox";
 import ExperienceCard from "../components/ExperienceCard";
-import Chat from "./Chat";
+
 const Home = () => {
   const events = [
     { date: "Today", title: "Wine and Dine Kendall", location: "0.3 miles", peopleAttending: 26, time: "7:00 pm" },

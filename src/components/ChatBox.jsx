@@ -1,7 +1,7 @@
 import DrawerWrapper from './DrawerWrapper'
 import ChatMessageList from "./chatMessageList"
 
-const Chat = ({ tripTitle, tripId, isOpen }) => {
+const ChatBox = ({ tripTitle, tripId, isOpen }) => {
 
     const chat = [
         {
@@ -30,3 +30,5 @@ const Chat = ({ tripTitle, tripId, isOpen }) => {
         </DrawerWrapper>
     </>)
 }
+
+export default ChatBox

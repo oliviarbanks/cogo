@@ -6,6 +6,7 @@ import Map from "./pages/Map";
 import Search from "./pages/Search";
 import Chat from "./pages/Chat";
 import Profile from "./pages/Profile";
+import LoginModal from "./components/LoginModal";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/search" element={<Search />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/login" element={<LoginModal/>} />
       </Routes>
     </div>
   );

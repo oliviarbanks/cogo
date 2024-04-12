@@ -1,6 +1,12 @@
+import { useState } from "react"
 import Pill from "./Pill"
 
-export default function DiscoverPage1({ categories, handleNextStep }) {
+export default function DiscoverPage1({ categories }) {
+    const [mood, setMood] = useState([])
+    const handleMoodChange = (moodString) => {
+        console.log(mood)
+        setMood(prev => [...prev, moodString])
+    }
     return (
         <div className="w-full flex flex-col pb-[96px]">
             <div className="flex flex-col items-start ">
@@ -22,12 +28,10 @@ export default function DiscoverPage1({ categories, handleNextStep }) {
             <div className="w-[70%] self-center flex flex-wrap items-start gap-x-[12px] gap-y-[16px]">
                 {categories.map((category, index) => {
                     return (
-                        <Pill category={category} key={index+22}/>
+                        <Pill category={category} key={index + 22} handleMoodChange={handleMoodChange} />
                     )
                 })}
             </div>
-            {/* <div className="fixed bottom-[12vw] left-0 w-full flex justify-center items-center  backdrop-blur-[2px] pb-[12vw]">
-            </div> */}
         </div>
     )
 }

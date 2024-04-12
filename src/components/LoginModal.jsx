@@ -20,11 +20,12 @@ const LoginModal = () => {
   };
 
   return (
-    <div className="text-white bg-conic-gradient from-27deg at-50-50 bg-gradient-to-br to-[#1D0F2C] from-[#5a0c46] via-[#361752]  flex flex-col justify-center m-auto min-h-screen flex-grow">
+    <div className="text-white flex flex-col justify-center m-auto min-h-screen flex-grow">
       <div className="p-10">
-        <h1 className="text-5xl text-center font-bold mb-2 bg-gradient-to-r from-miami-pink to-neon-blue text-transparent bg-clip-text">
+        <h1 className="text-5xl text-center font-bold mb-2 bg-gradient-to-r from-miami-pink to-white text-transparent bg-clip-text">
           SoBe Social
         </h1>
+        
         <h2 className="text-lg font-light my-3">Login into your account</h2>
         <form
           onSubmit={handleSubmit}
@@ -44,22 +45,23 @@ const LoginModal = () => {
             onChange={handlePasswordChange}
             required
           />
+          <Link to="/"> 
           <Button
             type="submit"
-            className="bg-black text-white bg-gradient-to-r hover:from-miami-pink hover:to-miami-blue m-auto"
+            className="bg-gradient-to-r hover:from-miami-pink hover:to-miami-blue m-auto"
           >
-            {" "}
-            Sign In{" "}
-          </Button>
+            Sign In
+            </Button>
+          </Link>
         </form>
-
+         
         <div className="flex flex-row justify-center ">
           <p className="font-light mr-2 ">Forgot Password? </p>
-          <Link to="/forgot-password">Reset Password</Link>
+          <Link to="/forgot-password" className="font-medium underline" >Reset Password</Link>
         </div>
         <div className="flex flex-row justify-center ">
           <p className="font-light mr-2">Don't have an account?</p>
-          <Link to="/signUp">Sign Up</Link>
+          <Link to="/signUp" className="underline font-bold">Sign Up</Link>
         </div>
       </div>
     </div>

@@ -47,9 +47,9 @@ export default {
       },
       colors: {
         // Miami Vice pink:
-        'miami-pink': '#f754a4',
+        'miami-pink': '#f539b7',
         // Miami Vice blue:
-        'miami-blue': '#45a2df',
+        'miami-blue': '#89FFFD',
         // Neon pink (optional):
         'neon-pink': '#f54e95',
         // Neon blue (optional):

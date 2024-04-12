@@ -1,4 +1,6 @@
 import ExperienceCard from "../components/ExperienceCard";
+import Searchbar from "../components/Searchbar"
+import SearchIcon from "/assets/icon-search-main.svg?url"
 
 const Home = () => {
   const events = [
@@ -13,11 +15,11 @@ const Home = () => {
         <div className="w-full flex items-center justify-center ">
           <h2 className="font-[700] text-[12vw] text-left text-miami-white">Hey, <br />Sweet thang!</h2>
         </div>
-        <div className="bg-yellow-400 absolute top-[95%] left-[20%] w-[60%]">
-          Searchbar
+        <div className="absolute top-[95%] left-[20%] w-[60%] z-10">
+          <Searchbar imageSrc={SearchIcon} placeholder="Search"/>
         </div>
       </div>
-      <div className="h-[70%]  w-full pt-[4vh] pl-[32px] flex flex-col items-start gap-[4vh] overflow-y-auto">
+      <div className="h-[70%] w-full pt-[4vh] pl-[32px] flex flex-col items-start gap-[4vh] overflow-y-auto">
         <div className="w-full flex flex-col gap-[16px]">
           <h3 className="text-[24px] font-[600] text-miami-white">Perfect Match</h3>
           <div className="flex items-start overflow-x-auto flex-grow-[2] gap-[32px]">

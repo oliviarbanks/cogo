@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import ExperienceCard from "../components/ExperienceCard";
+import Searchbar from "../components/Searchbar"
+import SearchIcon from "/assets/icon-search-main.svg?url"
 
 const Home = () => {
   const events = [

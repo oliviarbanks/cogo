@@ -10,6 +10,9 @@ export default {
       boxShadow: {
         searchField: "0px 8px 12px 0px rgba(0, 0, 0, 0.16)"
       },
+      backgroundColor: {
+        homeBg: "conic-gradient(from -71deg at 50% 50%, #361752 64.80000257492065deg, #F626C1 223.20000171661377deg, #3A45B3 360deg)"
+      },
       fontSize: {
         'xs': '.75rem',
         'sm': '.875rem',
@@ -52,7 +55,8 @@ export default {
         // Neon blue (optional):
         'neon-blue': '#439bd5',
         'primary-pink': '#F539B7',
-        'navbarBg': "rgba(251, 252, 252, 0.80)"
+        'navbarBg': "rgba(251, 252, 252, 0.75)",
+        'miami-white': "#F5FFFF"
     },
   },
 },

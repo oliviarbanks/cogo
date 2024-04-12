@@ -10,24 +10,30 @@ import Results from "./pages/Results";
 import LoginModal from "./components/LoginModal";
 import { UserProvider } from "./components/UserProvider";
 import "./App.css"
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
-
+const msToMinute = 60000
+const queryClient = new QueryClient({
+  defaultOptions: { queries: { staleTime: msToMinute * 30 } }
+})
 function App() {
   return (
     <div className="w-screen h-screen app-background">
-      <UserProvider>
-        <div className="w-full h-[calc(100vh)]">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/map" element={<Map />} />
-            <Route path="/search" element={<Search />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/experience" element={<Experience />} />
-            <Route path="/results" element={<Results />} />
-            <Route path="/login" element={<LoginModal />} />
-          </Routes>
-        </div>
-      </UserProvider>
+      <QueryClientProvider client={queryClient}>
+        <UserProvider>
+          <div className="w-full h-[calc(100vh-80px)]">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/map" element={<Map />} />
+              <Route path="/search" element={<Search />} />
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/experience" element={<Experience />} />
+              <Route path="/results" element={<Results />} />
+              <Route path="/login" element={<LoginModal />} />
+            </Routes>
+          </div>
+        </UserProvider>
+      </QueryClientProvider>
     </div>
   );
 }

@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
+import { useState } from "react";
 
-export default function ExperienceCard({ event }) {
+export default function ExperienceCard({ event, aiInfo}) {
+    const [info, setInfo] = useState()
     return (
-        <Link to={`/experience?${event.id}`} className="min-h-[260px] h-[30vh] min-w-[220px] w-[55%] bg-white rounded-[8px] flex flex-col items-start">
+        <Link to={`/experience`} state={{event: event}} className="min-h-[260px] h-[30vh] min-w-[220px] w-[55%] bg-white rounded-[8px] flex flex-col items-start">
             <div
                 style={{
                     backgroundImage: "",
@@ -28,7 +30,7 @@ export default function ExperienceCard({ event }) {
             </div>
             <div className="bg-white h-[50%] w-full rounded-[8px] rounded-t-none px-[12px] flex flex-col justify-center">
                 <p className="text-[12px] font-[400]">{event.date}</p>
-                <p className="text-[16px] font-[600]">{event.title}</p>
+                <p className="text-[16px] font-[600]">{aiInfo.title}</p>
                 <div className="flex items-center gap-[4px]">
                     <svg className="pt-[2px]" width="18" height="18" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="24px/solid/ic_24_location-marker">

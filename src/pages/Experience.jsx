@@ -1,9 +1,11 @@
 import { useContext, useState } from "react"
 import { UserContext } from "../components/UserProvider"
+import { useLocation } from "react-router-dom"
 
 export default function Experience() {
     const { setShareModal, setBottomBar } = useContext(UserContext)
-
+    const info = useLocation().state;
+    console.log(info)
 
     const handleOpenModal = (e) => {
         e.preventDefault()

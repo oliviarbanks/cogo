@@ -32,7 +32,7 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    <nav className=" fixed bottom-0 w-full h-[80px] pb-0 bg-navbarBg shadow-searchField" aria-label="Main Navigation">
+    <nav className=" fixed bottom-0 w-full h-[80px] pb-0 bg-navbarBg backdrop-blur-sm" aria-label="Main Navigation">
       <div className="flex flex-row justify-between items-center p-full h-full" role="menu">
         <Link to="/" role="menuitem">
           <div className="flex flex-col items-center">

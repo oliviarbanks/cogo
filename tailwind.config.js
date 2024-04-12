@@ -55,11 +55,15 @@ export default {
         // Neon blue (optional):
         'neon-blue': '#439bd5',
         'primary-pink': '#F539B7',
-        'navbarBg': "rgba(251, 252, 252, 0.75)",
+        'navbarBg': "rgba(251, 252, 252, 0.85)",
         'miami-white': "#F5FFFF",
-        'buttonBlue': "rgba(142, 245, 251, 0.98)"
+        'buttonBlue': "rgba(142, 245, 251, 0.98)",
+        'circleOrange': "#FF7355",
+        'pillBg': "rgba(255, 255, 255, 0.30)",
+        'pillBorder': "#F5FFFF",
+        'dalePurp' : "rgba(39, 18, 60, 0.80)"
+      },
     },
   },
-},
   plugins: [],
 };

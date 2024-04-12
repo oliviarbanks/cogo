@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="w-screen h-screen app-background">
       <UserProvider>
-        <div className="w-full h-[calc(100vh-80px)]">
+        <div className="w-full h-[calc(100vh)]">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/map" element={<Map />} />

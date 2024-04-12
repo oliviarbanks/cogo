@@ -31,7 +31,7 @@ const Home = () => {
           </div>
         </div>
         <div className="w-full flex flex-col gap-[16px] pb-[32px]">
-          <h3 className="text-[24px] font-[600]">Wallet Friendly</h3>
+          <h3 className="text-[24px] font-[600] text-miami-white">Wallet Friendly</h3>
           <div className="flex items-start overflow-x-auto flex-grow-[2] gap-[32px]">
             {
               events.map((event, index) => {

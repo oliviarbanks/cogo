@@ -1,6 +1,8 @@
+import { Link } from "react-router-dom";
+
 export default function ExperienceCard({ event }) {
     return (
-        <div className="min-h-[260px] h-[30vh] min-w-[220px] w-[55%] bg-white rounded-[8px] flex flex-col items-start">
+        <Link to={`/experience?${event.id}`} className="min-h-[260px] h-[30vh] min-w-[220px] w-[55%] bg-white rounded-[8px] flex flex-col items-start">
             <div
                 style={{
                     backgroundImage: "",
@@ -41,7 +43,7 @@ export default function ExperienceCard({ event }) {
                 <div className="w-full flex justify-between items-center pt-[8px]">
                     <div className="flex justify-start items-start">
                         <div className="rounded-full bg-gray-300 min-w-[24px] max-w-[32px] w-[6vw] aspect-square border-solid border-white border-[1px]">
-                        <img src="images/person4.png" />
+                            <img src="images/person4.png" />
                         </div>
                         <div className="rounded-full bg-gray-300 min-w-[24px] max-w-[32px] w-[6vw]  aspect-square border-solid border-white border-[1px] translate-x-[-25%]">
                             <img src="images/person1.png" />
@@ -61,6 +63,6 @@ export default function ExperienceCard({ event }) {
                     <p className="text-[14px] font-[700]">{event.time}</p>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }

@@ -1,8 +1,12 @@
 import { useState } from "react"
 import Pill from "./Pill"
 
-export default function DiscoverPage1({ handleMood, categories }) {
-    
+export default function DiscoverPage1({ categories }) {
+    const [mood, setMood] = useState([])
+    const handleMoodChange = (moodString) => {
+        // console.log(mood)
+        setMood(prev => [...prev, moodString])
+    }
     return (
         <div className="w-full flex flex-col pb-[96px]">
             <div className="flex flex-col items-start ">

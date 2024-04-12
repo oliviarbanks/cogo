@@ -1,6 +1,10 @@
-export default function ExperienceCard({ event }) {
+import { Link, Navigate } from "react-router-dom";
+import { useState } from "react";
+
+export default function ExperienceCard({ event, aiInfo}) {
+    const [info, setInfo] = useState()
     return (
-        <div className="min-h-[260px] h-[30vh] min-w-[220px] w-[55%] bg-white rounded-[8px] flex flex-col items-start">
+        <Link to={`/experience`} state={{event: event}} className="min-h-[260px] h-[30vh] min-w-[220px] w-[55%] bg-white rounded-[8px] flex flex-col items-start">
             <div
                 style={{
                     backgroundImage: "",
@@ -26,7 +30,7 @@ export default function ExperienceCard({ event }) {
             </div>
             <div className="bg-white h-[50%] w-full rounded-[8px] rounded-t-none px-[12px] flex flex-col justify-center">
                 <p className="text-[12px] font-[400]">{event.date}</p>
-                <p className="text-[16px] font-[600]">{event.title}</p>
+                <p className="text-[16px] font-[600]">{aiInfo.title}</p>
                 <div className="flex items-center gap-[4px]">
                     <svg className="pt-[2px]" width="18" height="18" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="24px/solid/ic_24_location-marker">
@@ -41,7 +45,7 @@ export default function ExperienceCard({ event }) {
                 <div className="w-full flex justify-between items-center pt-[8px]">
                     <div className="flex justify-start items-start">
                         <div className="rounded-full bg-gray-300 min-w-[24px] max-w-[32px] w-[6vw] aspect-square border-solid border-white border-[1px]">
-                        <img src="images/person4.png" />
+                            <img src="images/person4.png" />
                         </div>
                         <div className="rounded-full bg-gray-300 min-w-[24px] max-w-[32px] w-[6vw]  aspect-square border-solid border-white border-[1px] translate-x-[-25%]">
                             <img src="images/person1.png" />
@@ -61,6 +65,6 @@ export default function ExperienceCard({ event }) {
                     <p className="text-[14px] font-[700]">{event.time}</p>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }

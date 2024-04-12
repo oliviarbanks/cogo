@@ -23,7 +23,7 @@ const Navbar = () => {
 
 
   useEffect(() => {
-    console.log(homeIcon)
+    // console.log(homeIcon)
     setHomeIcon(isActive("home"));
     setMapIcon(isActive("map"));
     setSearchIcon(isActive("search"));

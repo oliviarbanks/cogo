@@ -1,15 +1,46 @@
+
 import { Link } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 import ExperienceCard from "../components/ExperienceCard";
-import Searchbar from "../components/Searchbar"
-import SearchIcon from "/assets/icon-search-main.svg?url"
+
+const backendRootUrl = import.meta.env.VITE_BACKEND_URL
+const events = [
+  { imageUrl: "/images/card1.jpg", date: "Today", title: "Wine and Dine Kendall", location: "0.3 miles", peopleAttending: 26, time: "7:00 pm" },
+  { imageUrl: "/images/card2.jpg", date: "Today", title: "Co-ed Beach Volley", location: "1.2 miles", peopleAttending: 10, time: "10:00 am" },
+  { imageUrl: "/images/card3.jpg", date: "Tomorrow", title: "Anime Lovers Game Night", location: "2.7 miles", peopleAttending: 7, time: "6:00 pm" },
+  { imageUrl: "/images/card4.jpg", date: "Friday", title: "Harry Potter Marathon!!", location: "3.5 miles", peopleAttending: 20, time: "2:00 pm" },
+]
 
 const Home = () => {
-  const events = [
-    { imageUrl: "/images/card1.jpg", date: "Today", title: "Wine and Dine Kendall", location: "0.3 miles", peopleAttending: 26, time: "7:00 pm" },
-    { imageUrl: "/images/card2.jpg", date: "Today", title: "Co-ed Beach Volley", location: "1.2 miles", peopleAttending: 10, time: "10:00 am" },
-    { imageUrl: "/images/card3.jpg", date: "Tomorrow", title: "Anime Lovers Game Night", location: "2.7 miles", peopleAttending: 7, time: "6:00 pm" },
-    { imageUrl: "/images/card4.jpg", date: "Friday", title: "Harry Potter Marathon!!", location: "3.5 miles", peopleAttending: 20, time: "2:00 pm" },
-  ]
+  const [suggestionsPlaces, setSuggestionsPlaces] = useState([])
+  const [suggestionsEvents, setSuggestionsEvents] = useState([])
+
+  const fetchAISuggestion = async () => {
+    const aiUrl = backendRootUrl + "api/suggestions/";
+    try {
+      const res = await fetch(aiUrl)
+        .then(async (res) => {
+          return await res.json()
+        })
+      if (res.success) {
+        setSuggestionsEvents(res.data.event)
+        setSuggestionsPlaces(res.data.activity)
+      }
+      return res.data
+    } catch (e) {
+      throw new Error(e);
+    }
+  }
+
+  const { data: aiSuggestion, isLoading, error } = useQuery({
+    queryKey: ["aiSuggestion"],
+    queryFn: () => fetchAISuggestion(),
+    retry: 5,
+    keepPreviousData: true,
+  });
+
+
   return (
     <div className="text-black h-full flex flex-col items-start">
       <div className=" h-[30%] flex items-center relative w-full ">

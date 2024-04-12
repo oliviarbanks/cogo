@@ -13,7 +13,7 @@ import LoginModal from "./components/LoginModal";
 function App() {
   return (
     <div className="w-screen h-screen bg-white">
-      <div className="w-full h-[calc(100vh-60px)]">
+      <div className="w-full h-[calc(100vh-80px)]">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/map" element={<Map />} />

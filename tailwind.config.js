@@ -51,7 +51,8 @@ export default {
         'neon-pink': '#f54e95',
         // Neon blue (optional):
         'neon-blue': '#439bd5',
-        'primary-pink': '#F539B7'
+        'primary-pink': '#F539B7',
+        'navbarBg': "rgba(251, 252, 252, 0.80)"
     },
   },
 },

@@ -32,22 +32,6 @@ const Navbar = () => {
     }, [location]);
   
   return (
-<<<<<<< HEAD
-    <nav className="fixed bottom-0 w-full h-[60px] bg-red-500" aria-label="Main Navigation ">
-      <div role="menu">
-        <Link to="/" role="menuitem">
-          Home
-        </Link>
-        <Link to="/map" role="menuitem">
-          Map
-        </Link>
-        <Link to="/search" role="menuitem">
-          Search
-        </Link>
-        <Link to="/profile" role="menuitem">
-          Profile
-        </Link>
-=======
     <nav className=" fixed bottom-0 w-full h-[60px] 
     rounded-t-[15px] rounded-b-[var(--Radius-Sharp, 0px)] shadow-sm shadow-y-reverse bg-[#2B051E]" aria-label="Main Navigation ">
       <div className="flex flex-row justify-evenly items-center p-full "  role="menu">
@@ -81,7 +65,6 @@ const Navbar = () => {
         <span className='text-white'>Profile</span>
       </div>
     </Link>
->>>>>>> 155752d14d3ce44b9cb11bffa67a4c7b526ca0f7
       </div>
     </nav>
   );

@@ -1,7 +1,7 @@
 import { useState } from "react"
 import Pill from "./Pill"
 
-export default function DiscoverPage1({ categories }) {
+export default function DiscoverPage1({ handleMood, categories }) {
     const [mood, setMood] = useState([])
     const handleMoodChange = (moodString) => {
         // console.log(mood)

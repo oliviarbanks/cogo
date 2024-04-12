@@ -1,8 +1,9 @@
-import { useState } from "react"
-import ShareModal from "../components/ShareModal"
+import { useContext, useState } from "react"
+import { UserContext } from "../components/UserProvider"
 
 export default function Experience() {
-    const [shareModal, setShareModal] = useState(false)
+    const { setShareModal } = useContext(UserContext)
+
 
     const handleOpenModal = (e) => {
         e.preventDefault()
@@ -13,9 +14,6 @@ export default function Experience() {
         <div
             onClick={() => setShareModal(false)}
             className="text-black h-full flex flex-col items-start bg-white relative">
-            {shareModal &&
-                <ShareModal />
-            }
             <div className="w-full">
                 <img src="/images/experience1.png" />
             </div>

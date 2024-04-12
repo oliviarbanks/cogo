@@ -4,6 +4,7 @@ import { useState } from "react";
 import Navbar from "./Navbar";
 import SearchNextBar from "./SearchNextBar";
 import { Link, useLocation } from 'react-router-dom';
+import ShareModal from "./ShareModal";
 
 export const UserContext = createContext({})
 
@@ -12,11 +13,12 @@ export function UserProvider({ children }) {
 
     const [user, setUser] = useState({});
     const [bottomBar, setBottomBar] = useState("navbar")
+    const [shareModal, setShareModal] = useState(false)
 
     if (localStorage.getItem("user")) {
         setUser(localStorage.getItem("user"))
     }
-    
+
     useEffect(() => {
         // console.log(location)
         if (location.pathname === "/search") {
@@ -32,15 +34,12 @@ export function UserProvider({ children }) {
                 user: user,
                 setUser: setUser,
                 setBottomBar: setBottomBar,
+                setShareModal, setShareModal
             }
         }>
             {children}
-            {
-                bottomBar === "navbar" && <Navbar />
-            }
-            {/* {
-                bottomBar === "searchNextBar" && <SearchNextBar />
-            } */}
+            {bottomBar === "navbar" && <Navbar />}
+            {shareModal && <ShareModal />}
         </UserContext.Provider>
     )
 }

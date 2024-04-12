@@ -1,20 +1,24 @@
 import { Link } from "react-router-dom"
 import ExperienceCard from "../components/ExperienceCard"
 import { useLocation } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 
 const backendRootUrl = import.meta.env.VITE_BACKEND_URL
 
 export default function Results() {
     const eventsDefault = [
-        { imageUrl: "/images/card1.jpg", id:"534214", date: "Today", title: "Wine and Dine Kendall", location: "0.3 miles", peopleAttending: 26, time: "7:00 pm" },
-        { imageUrl: "/images/card2.jpg", id:"213412", date: "Today", title: "Co-ed Beach Volley", location: "1.2 miles", peopleAttending: 10, time: "10:00 am" },
-        { imageUrl: "/images/card3.jpg", id:"1612344", date: "Tomorrow", title: "Anime Lovers Game Night", location: "2.7 miles", peopleAttending: 7, time: "6:00 pm" },
-        { imageUrl: "/images/card4.jpg", id:"12346324", date: "Friday", title: "Harry Potter Marathon!!", location: "3.5 miles", peopleAttending: 20, time: "2:00 pm" },
-        { imageUrl: "/images/card2.jpg", id:"213412", date: "Today", title: "Co-ed Beach Volley", location: "1.2 miles", peopleAttending: 10, time: "10:00 am" },
+        { imageUrl: "/images/card1.jpg", id: "534214", date: "Today", title: "Wine and Dine Kendall", location: "0.3 miles", peopleAttending: 26, time: "7:00 pm" },
+        { imageUrl: "/images/card2.jpg", id: "213412", date: "Today", title: "Co-ed Beach Volley", location: "1.2 miles", peopleAttending: 10, time: "10:00 am" },
+        { imageUrl: "/images/card3.jpg", id: "1612344", date: "Tomorrow", title: "Anime Lovers Game Night", location: "2.7 miles", peopleAttending: 7, time: "6:00 pm" },
+        { imageUrl: "/images/card4.jpg", id: "12346324", date: "Friday", title: "Harry Potter Marathon!!", location: "3.5 miles", peopleAttending: 20, time: "2:00 pm" },
+        { imageUrl: "/images/card2.jpg", id: "213412", date: "Today", title: "Co-ed Beach Volley", location: "1.2 miles", peopleAttending: 10, time: "10:00 am" },
     ]
-    let location = useLocation();
+    let location = useLocation()
+
+    useEffect(() => {
+
+    }, [location])
 
     const [suggestionsPlaces, setSuggestionsPlaces] = useState([])
     const [suggestionsEvents, setSuggestionsEvents] = useState([])
@@ -22,6 +26,7 @@ export default function Results() {
     const fetchAISuggestion = async () => {
         console.log("Sending request")
         const aiUrl = backendRootUrl + "api/suggestions/";
+        console.log(location.state)
         try {
             const res = await fetch(aiUrl, {
                 method: "POST",
@@ -51,11 +56,14 @@ export default function Results() {
         }
     }
     const { data: aiSuggestion, isLoading, error } = useQuery({
-        queryKey: ["aiSuggestion"],
-        queryFn: () => fetchAISuggestion(),
+        queryKey: ["aiSuggestion", location.state],
+        queryFn: fetchAISuggestion,
         retry: 5,
         keepPreviousData: true,
         refetchOnMount: true,
+        staleTime: 0,
+        refetchOnWindowFocus: true,
+        refetchOnReconnect: true,
     });
 
     console.log(suggestionsEvents)
@@ -85,10 +93,10 @@ export default function Results() {
                     <h3 className="text-[24px] font-[600] text-miami-white">Perfect Match</h3>
                     <div className="flex items-start overflow-x-auto flex-grow-[2] gap-[32px]">
                         {isLoading && <h2> Loading ... </h2>}
-                        {!isLoading && suggestionsEvents && 
+                        {!isLoading && suggestionsEvents &&
                             suggestionsEvents.map((event, index) => {
                                 return (
-                                    <ExperienceCard aiInfo={event} event = {eventsDefault[index]} key={index} />
+                                    <ExperienceCard aiInfo={event} event={eventsDefault[index]} key={index} />
                                 )
                             })
                         }
@@ -98,10 +106,10 @@ export default function Results() {
                     <h3 className="text-[24px] font-[600] text-miami-white">Wallet Friendly</h3>
                     <div className="flex items-start overflow-x-auto flex-grow-[2] gap-[32px]">
                         {isLoading && <h2> Loading ... </h2>}
-                        {!isLoading && suggestionsPlaces && 
+                        {!isLoading && suggestionsPlaces &&
                             suggestionsPlaces.map((activity, index) => {
                                 return (
-                                    <ExperienceCard aiInfo={activity} event = {eventsDefault[index]}  key={index + 5} />
+                                    <ExperienceCard aiInfo={activity} event={eventsDefault[index]} key={index + 5} />
                                 )
                             })
                         }

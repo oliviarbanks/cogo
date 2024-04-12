@@ -6,10 +6,10 @@ import ExperienceCard from "../components/ExperienceCard";
 
 
 const events = [
-  { imageUrl: "/images/card1.jpg", date: "Today", title: "Wine and Dine Kendall", location: "0.3 miles", peopleAttending: 26, time: "7:00 pm" },
-  { imageUrl: "/images/card2.jpg", date: "Today", title: "Co-ed Beach Volley", location: "1.2 miles", peopleAttending: 10, time: "10:00 am" },
-  { imageUrl: "/images/card3.jpg", date: "Tomorrow", title: "Anime Lovers Game Night", location: "2.7 miles", peopleAttending: 7, time: "6:00 pm" },
-  { imageUrl: "/images/card4.jpg", date: "Friday", title: "Harry Potter Marathon!!", location: "3.5 miles", peopleAttending: 20, time: "2:00 pm" },
+  { imageUrl: "/images/card1.jpg", date: "Today", title: "Arcade Night", location: "0.3 miles", peopleAttending: 26, time: "7:00 pm" },
+  { imageUrl: "/images/card2.jpg", date: "Today", title: "Club Space", location: "1.2 miles", peopleAttending: 10, time: "10:00 am" },
+  { imageUrl: "/images/card3.jpg", date: "Tomorrow", title: "South Beach Volleyball", location: "2.7 miles", peopleAttending: 7, time: "6:00 pm" },
+  { imageUrl: "/images/card4.jpg", date: "Friday", title: "Concert Night: Jazz", location: "3.5 miles", peopleAttending: 20, time: "2:00 pm" },
 ]
 
 const Home = () => {

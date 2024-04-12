@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import ExperienceCard from "../components/ExperienceCard";
 
-const backendRootUrl = import.meta.env.VITE_BACKEND_URL
+
 const events = [
   { imageUrl: "/images/card1.jpg", date: "Today", title: "Wine and Dine Kendall", location: "0.3 miles", peopleAttending: 26, time: "7:00 pm" },
   { imageUrl: "/images/card2.jpg", date: "Today", title: "Co-ed Beach Volley", location: "1.2 miles", peopleAttending: 10, time: "10:00 am" },
@@ -13,32 +13,9 @@ const events = [
 ]
 
 const Home = () => {
-  const [suggestionsPlaces, setSuggestionsPlaces] = useState([])
-  const [suggestionsEvents, setSuggestionsEvents] = useState([])
 
-  const fetchAISuggestion = async () => {
-    const aiUrl = backendRootUrl + "api/suggestions/";
-    try {
-      const res = await fetch(aiUrl)
-        .then(async (res) => {
-          return await res.json()
-        })
-      if (res.success) {
-        setSuggestionsEvents(res.data.event)
-        setSuggestionsPlaces(res.data.activity)
-      }
-      return res.data
-    } catch (e) {
-      throw new Error(e);
-    }
-  }
 
-  const { data: aiSuggestion, isLoading, error } = useQuery({
-    queryKey: ["aiSuggestion"],
-    queryFn: () => fetchAISuggestion(),
-    retry: 5,
-    keepPreviousData: true,
-  });
+
 
 
   return (
@@ -64,6 +41,7 @@ const Home = () => {
         <div className="w-full flex flex-col gap-[16px]">
           <h3 className="text-[24px] font-[600] text-miami-white">Perfect Match</h3>
           <div className="flex items-start overflow-x-auto flex-grow-[2] gap-[32px]">
+
             {
               events.map((event, index) => {
                 return (

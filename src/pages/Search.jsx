@@ -1,6 +1,6 @@
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import DiscoverPage1 from "../components/DiscoverPage1";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import DiscoverPage2 from "../components/DiscoverPage2";
 import SearchNextBar from "../components/SearchNextBar";
 
@@ -37,21 +37,43 @@ const Search = () => {
     "Activity / Mood",
   ]
   const [step, setStep] = useState(0)
+  const [form, setForm] = useState({
+    AI: [],
+    MAPS: {
+      radius: "",
+      budget: "",
+      date: "",
+    }
+  })
 
-  const handleNextStep = (e) => {
-    // console.log(e)
-    e.preventDefault()
-    setStep(prev => prev + 1)
-  }
   const handlePrevStep = (e) => {
     e.preventDefault()
     setStep(prev => prev - 1)
   }
-
+  const handleMood = (newMood) => {
+    let curr = form["AI"]
+    curr.push(newMood)
+    setForm({ AI: curr, MAP: form["MAPS"] })
+    console.log(curr)
+  }
+  const handleNextStep = (e) => {
+    e.preventDefault()
+    setStep(prev => prev + 1)
+  }
+  const handleForm = (newForm) => {
+    setForm({
+      AI: form["AI"],
+      MAPS: {
+        ...form["MAPS"],
+        ...newForm,
+      }
+    })
+    console.log(form["MAPS"])
+  }
   return (
     <div className="text-black h-full flex flex-col items-start gap-[16px] overflow-y-auto">
       {step === 2 && (
-        <Navigate to="/results" replace={true} />
+        <Navigate replace={true} state={form} to="/results"  />
       )}
       <div className="w-full flex justify-between items-center px-[16px] pt-[16px]">
         <Link to="/">
@@ -71,8 +93,8 @@ const Search = () => {
           </g>
         </svg>
       </div>
-      {step === 0 && <DiscoverPage1 categories={categories} />}
-      {step === 1 && <DiscoverPage2 categories={categories} />}
+      {step === 0 && <DiscoverPage1 handleMood={handleMood} categories={categories} />}
+      {step === 1 && <DiscoverPage2 handleForm={handleForm} categories={categories} />}
       <SearchNextBar handlePrevStep={handlePrevStep} handleNextStep={handleNextStep} />
     </div>
   )

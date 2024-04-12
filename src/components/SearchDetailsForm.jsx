@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function SearchDetailsForm({ handleNextStep }) {
+export default function SearchDetailsForm({ handleForm, handleNextStep }) {
     const [showWhere, setShowWhere] = useState(false)
     const [showWhen, setShowWhen] = useState(false)
     const [showHow, setShowHow] = useState(false)
@@ -11,6 +11,10 @@ export default function SearchDetailsForm({ handleNextStep }) {
     const [radius, setRadius] = useState(1)
 
     const handleChangeLocation = (e) => {
+        handleForm({
+            radius: radius,
+            budget: budget,
+        })
         e.preventDefault()
         setLocation(e.target.value)
     }
@@ -34,6 +38,7 @@ export default function SearchDetailsForm({ handleNextStep }) {
                         <p>1 mi.</p>
                         <input type="range" className="flex-grow-[1]" min="1" max="25" step="1" onChange={(e) => {
                             setRadius(e.target.value)
+                            handleForm({radius: e.target.value})
                         }}
                         />
                         <p>25 mi.</p>
@@ -94,7 +99,10 @@ export default function SearchDetailsForm({ handleNextStep }) {
                     showBudget &&
                     <div className="w-full flex justify-between gap-[12px]">
                         <p>Free!</p>
-                        <input value={budget} onChange={(e) => setBudget(e.target.value)} type="range" min="0" max="200" step="5" className="flex-grow-[1]" />
+                        <input value={budget} onChange={(e) => { 
+                            setBudget(e.target.value)
+                            handleForm({budget: e.target.value})
+                        }} type="range" min="0" max="200" step="5" className="flex-grow-[1]" />
                         <p>$200</p>
                     </div>
                 }

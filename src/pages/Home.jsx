@@ -1,4 +1,15 @@
+
+import { useQuery } from "@tanstack/react-query";
 import ExperienceCard from "../components/ExperienceCard";
+
+
+const backendRootUrl = import.meta.env.VITE_BACKEND_URL
+
+const fetchAISuggestion = async () => {
+    const aiUrl = backendRootUrl + "/api/suggestions/";
+    const res = fetch( aiUrl )
+    .then()
+}
 
 const Home = () => {
   const events = [
@@ -7,6 +18,16 @@ const Home = () => {
     { imageUrl: "/images/card3.jpg", date: "Tomorrow", title: "Anime Lovers Game Night", location: "2.7 miles", peopleAttending: 7, time: "6:00 pm" },
     { imageUrl: "/images/card4.jpg", date: "Friday", title: "Harry Potter Marathon!!", location: "3.5 miles", peopleAttending: 20, time: "2:00 pm" },
   ]
+
+  const [data, isLoading, error ] = useQuery(
+    {
+      queryKey: ['aiSuggestion'],
+      queryFn: fetchAISuggestion,
+      retry: 5,
+    }
+  );
+
+  
   return (
     <div className="text-black h-full flex flex-col items-start">
       <div className=" h-[30%] flex items-center relative w-full ">

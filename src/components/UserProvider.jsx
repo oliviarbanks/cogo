@@ -19,7 +19,7 @@ export function UserProvider({ children }) {
     
     useEffect(() => {
         console.log(location)
-        if (location.pathname === "/search") {
+        if (location.pathname === "/search" || location.pathname === "/login") {
             setBottomBar('searchNextBar')
         } else {
             setBottomBar('navbar')

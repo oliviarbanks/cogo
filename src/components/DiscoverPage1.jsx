@@ -16,11 +16,6 @@ export default function DiscoverPage1({ categories, handleNextStep }) {
                 })}
             </div>
             <div className="fixed bottom-[12vw] left-0 w-full flex justify-center items-center  backdrop-blur-[2px] pb-[12vw]">
-                <div
-                    onClick={(e) => {handleNextStep(e)}}
-                    className="bg-[#2C2C2C] text-center text-white w-[80%] font-[600] text-[24px] tracking-[0.48px] py-[8px] rounded-[24px]">
-                    Next
-                </div>
             </div>
         </div>
     )

@@ -56,7 +56,8 @@ export default {
         'neon-blue': '#439bd5',
         'primary-pink': '#F539B7',
         'navbarBg': "rgba(251, 252, 252, 0.75)",
-        'miami-white': "#F5FFFF"
+        'miami-white': "#F5FFFF",
+        'buttonBlue': "rgba(142, 245, 251, 0.98)"
     },
   },
 },

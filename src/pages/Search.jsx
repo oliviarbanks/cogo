@@ -1,7 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import DiscoverPage1 from "../components/DiscoverPage1";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DiscoverPage2 from "../components/DiscoverPage2";
+import SearchNextBar from "../components/SearchNextBar";
 
 const Search = () => {
   const categories = [
@@ -42,8 +43,21 @@ const Search = () => {
     e.preventDefault()
     setStep(prev => prev + 1)
   }
+  const handlePrevStep = (e) => {
+    e.preventDefault()
+    setStep(prev => prev - 1)
+  }
+  // useEffect(() => {
+  //   console.log(step)
+  //   if (step === 2) {
+
+  //   }
+  // }, [step])
   return (
     <div className="text-black h-full flex flex-col items-start gap-[16px] overflow-y-auto">
+      {step === 2 && (
+        <Navigate to="/results" replace={true} />
+      )}
       <div className="w-full flex justify-between items-center px-[16px] pt-[16px]">
         <Link to="/">
           <svg xmlns="http://www.w3.org/2000/svg" width="11" height="19" viewBox="0 0 11 19" fill="none">
@@ -62,8 +76,9 @@ const Search = () => {
           </g>
         </svg>
       </div>
-      {step === 0 && <DiscoverPage1 categories={categories} handleNextStep={handleNextStep} />}
-      {step === 1 && <DiscoverPage2 categories={categories} handleNextStep={handleNextStep} />}
+      {step === 0 && <DiscoverPage1 categories={categories} />}
+      {step === 1 && <DiscoverPage2 categories={categories} />}
+      <SearchNextBar handlePrevStep={handlePrevStep} handleNextStep={handleNextStep} />
     </div>
   )
 };

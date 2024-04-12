@@ -5,17 +5,17 @@ export default function FriendInviteCard({ imageUrl }) {
     const handleInviteSend = (e) => {
         e.preventDefault()
         e.stopPropagation()
-        setInviteSent(true)
+        setInviteSent(prev => !prev)
     }
     return (
         <div
             onClick={(e) => handleInviteSend(e)}
             className="w-full flex justify-between items-center border-b-solid border-b-[1px] border-b-[#C4C4C4] py-[8px] px-[20px]">
             <div className="flex gap-[8px] items-center">
-                <img src={imageUrl} className="rounded-full w-[40px] aspect-square" />
-                <p>Sarah</p>
+                <img src={imageUrl.imageUrl} className="rounded-full w-[40px] aspect-square" />
+                <p>{imageUrl.name}</p>
             </div>
-            <div className={`w-[20px] rounded-full aspect-square border-solid border-[1px] border-black relative ${!inviteSent ? "bg-transparent" : "bg-miami-pink"}`}>
+            <div className={`w-[20px] rounded-full aspect-square border-solid border-[2px] border-miami-white relative ${!inviteSent ? "bg-transparent" : "bg-miami-pink border-transparent"}`}>
                 {
                     inviteSent &&
                     <svg className="absolute top-1/2 left-1/2 -translate-x-[50%] -translate-y-[50%]" width="20" height="20" viewBox="0 0 37 36" fill="none" xmlns="http://www.w3.org/2000/svg">

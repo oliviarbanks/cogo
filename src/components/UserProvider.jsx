@@ -43,8 +43,8 @@ export function UserProvider({ children }) {
         }>
             {children}
             {bottomBar === "navbar" && <Navbar />}
-            {bottomBar === "tripBar" && <TripBar />}
-            {shareModal && <ShareModal />}
+            {bottomBar === "tripBar" && <TripBar setShareModal={setShareModal} setBottomBar={setBottomBar} />}
+            {shareModal && <ShareModal setShareModal={setShareModal} setBottomBar={setBottomBar}/>}
         </UserContext.Provider>
     )
 }

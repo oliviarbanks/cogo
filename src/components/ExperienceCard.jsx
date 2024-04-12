@@ -1,12 +1,12 @@
 export default function ExperienceCard({ event }) {
     return (
         <div className="min-h-[260px] h-[30vh] min-w-[220px] w-[55%] bg-white rounded-[8px] flex flex-col items-start">
-            <div 
-            style={{
-                backgroundImage: "",
-            }}
-            className="bg-gray-400 h-[50%] w-full rounded-[8px] rounded-b-none relative">
-                <img src={`${event.imageUrl}`} className="w-full max-h-[100%] rounded-[8px] rounded-b-none"/>
+            <div
+                style={{
+                    backgroundImage: "",
+                }}
+                className="bg-gray-400 h-[50%] w-full rounded-[8px] rounded-b-none relative">
+                <img src={`${event.imageUrl}`} className="w-full max-h-[100%] rounded-[8px] rounded-b-none" />
                 <svg className="absolute top-[12px] right-[12px]" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="heart">
                         <path id="Vector" d="M7 3C4.239 3 2 5.216 2 7.95C2 10.157 2.875 15.395 11.488 20.69C11.6423 20.7839 11.8194 20.8335 12 20.8335C12.1806 20.8335 12.3577 20.7839 12.512 20.69C21.125 15.395 22 10.157 22 7.95C22 5.216 19.761 3 17 3C14.239 3 12 6 12 6C12 6 9.761 3 7 3Z" fill="#222222" fillOpacity="0.3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -40,11 +40,19 @@ export default function ExperienceCard({ event }) {
                 </div>
                 <div className="w-full flex justify-between items-center pt-[8px]">
                     <div className="flex justify-start items-start">
-                        <div className="rounded-full bg-gray-300 min-w-[24px] max-w-[32px] w-[6vw] aspect-square border-solid border-white border-[1px]" />
-                        <div className="rounded-full bg-gray-300 min-w-[24px] max-w-[32px] w-[6vw]  aspect-square border-solid border-white border-[1px] translate-x-[-25%]" />
-                        <div className="rounded-full bg-gray-300 min-w-[24px] max-w-[32px] w-[6vw]  aspect-square border-solid border-white border-[1px] translate-x-[-50%]" />
-                        <div className="rounded-full bg-gray-300 min-w-[24px] max-w-[32px] w-[6vw]  aspect-square border-solid border-white border-[1px] translate-x-[-75%]" />
-                        <div className="rounded-full bg-gray-400 min-w-[24px] max-w-[32px] w-[6vw]  aspect-square border-solid border-white border-[1px] translate-x-[-100%] flex items-center justify-center">
+                        <div className="rounded-full bg-gray-300 min-w-[24px] max-w-[32px] w-[6vw] aspect-square border-solid border-white border-[1px]">
+                        <img src="images/person4.png" />
+                        </div>
+                        <div className="rounded-full bg-gray-300 min-w-[24px] max-w-[32px] w-[6vw]  aspect-square border-solid border-white border-[1px] translate-x-[-25%]">
+                            <img src="images/person1.png" />
+                        </div>
+                        <div className="rounded-full bg-gray-300 min-w-[24px] max-w-[32px] w-[6vw]  aspect-square border-solid border-white border-[1px] translate-x-[-50%]">
+                            <img src="images/person2.png" />
+                        </div>
+                        <div className="rounded-full bg-gray-300 min-w-[24px] max-w-[32px] w-[6vw]  aspect-square border-solid border-white border-[1px] translate-x-[-75%]">
+                            <img src="images/person3.png" />
+                        </div>
+                        <div className="rounded-full bg-circleOrange min-w-[24px] max-w-[32px] w-[6vw]  aspect-square border-solid border-white border-[1px] translate-x-[-100%] flex items-center justify-center">
                             <p className="text-[10px] font-[700px] text-white">
                                 {`+${event.peopleAttending - 5}`}
                             </p>

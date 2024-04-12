@@ -47,18 +47,23 @@ export default {
       },
       colors: {
         // Miami Vice pink:
-        'miami-pink': '#f754a4',
+        'miami-pink': '#f539b7',
         // Miami Vice blue:
-        'miami-blue': '#45a2df',
+        'miami-blue': '#89FFFD',
         // Neon pink (optional):
         'neon-pink': '#f54e95',
         // Neon blue (optional):
         'neon-blue': '#439bd5',
         'primary-pink': '#F539B7',
-        'navbarBg': "rgba(251, 252, 252, 0.75)",
-        'miami-white': "#F5FFFF"
+        'navbarBg': "rgba(251, 252, 252, 0.85)",
+        'miami-white': "#F5FFFF",
+        'buttonBlue': "rgba(142, 245, 251, 0.98)",
+        'circleOrange': "#FF7355",
+        'pillBg': "rgba(255, 255, 255, 0.30)",
+        'pillBorder': "#F5FFFF",
+        'dalePurp' : "rgba(39, 18, 60, 0.80)"
+      },
     },
   },
-},
   plugins: [],
 };

@@ -15,13 +15,13 @@ import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 const msToMinute = 60000
 const queryClient = new QueryClient({
   defaultOptions: { queries: { staleTime: msToMinute * 30 } }
-})  
+})
 function App() {
   return (
     <div className="w-screen h-screen app-background">
       <QueryClientProvider client={queryClient}>
-        <div className="w-full h-[calc(100vh-80px)]">
-          <UserProvider>
+        <UserProvider>
+          <div className="w-full h-[calc(100vh-80px)]">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/map" element={<Map />} />
@@ -31,9 +31,8 @@ function App() {
               <Route path="/results" element={<Results />} />
               <Route path="/login" element={<LoginModal />} />
             </Routes>
-          </UserProvider>
-        </div>
-        <Navbar />
+          </div>
+        </UserProvider>
       </QueryClientProvider>
     </div>
   );

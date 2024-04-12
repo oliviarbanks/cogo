@@ -57,7 +57,7 @@ const LoginModal = () => {
          
         <div className="flex flex-row justify-center ">
           <p className="font-light mr-2 ">Forgot Password? </p>
-          <Link to="/forgot-password" className="font-medium underline" >Reset Password</Link>
+          <Link to="/forgot-password" className="underline font-bold" >Reset Password</Link>
         </div>
         <div className="flex flex-row justify-center ">
           <p className="font-light mr-2">Don't have an account?</p>

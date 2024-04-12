@@ -5,6 +5,7 @@ export default function Pill({ category, handleMoodChange }) {
     const handlePillClick = (moodString) => {
         // console.log(moodString)
         handleMoodChange(moodString)
+        setActive(true)
     }
     return (
         <button

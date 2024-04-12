@@ -4,7 +4,7 @@ import Pill from "./Pill"
 export default function DiscoverPage1({ categories }) {
     const [mood, setMood] = useState([])
     const handleMoodChange = (moodString) => {
-        console.log(mood)
+        // console.log(mood)
         setMood(prev => [...prev, moodString])
     }
     return (

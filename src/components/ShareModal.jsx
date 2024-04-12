@@ -1,6 +1,6 @@
 import FriendInviteCard from "./FriendInviteCard"
 
-export default function ShareModal({ setShareModal, setBottomBar }) {
+export default function ShareModal({ setShareModal, setBottomBar, setChatModal }) {
     const imageUrls = [
         { name: "Sarah", imageUrl: "/images/person1.png" },
         { name: "Johnny", imageUrl: "/images/person2.png" },
@@ -16,7 +16,8 @@ export default function ShareModal({ setShareModal, setBottomBar }) {
     const handleClickSend = () => {
         console.log('ehllo')
         setShareModal(false)
-        setBottomBar("searchNextBar")
+        setChatModal(true)
+        // setBottomBar("searchNextBar")
     }
     return (
         <div
@@ -38,7 +39,7 @@ export default function ShareModal({ setShareModal, setBottomBar }) {
                     <div className="w-full flex-grow-[1] px-[16px] flex flex-col items-start gap-[8px] overflow-y-auto">
                         {imageUrls.map((card, index) => {
                             return (
-                                <FriendInviteCard imageUrl={card} key={index}/>
+                                <FriendInviteCard imageUrl={card} key={index} />
                             )
                         })}
                     </div>

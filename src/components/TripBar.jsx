@@ -20,7 +20,7 @@ export default function TripBar({ setShareModal, setBottomBar }) {
                     </p>
                 </button>
             </div>
-            
+
         </nav>
     )
 }

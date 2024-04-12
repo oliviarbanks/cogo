@@ -6,6 +6,7 @@ import SearchNextBar from "./SearchNextBar";
 import { Link, useLocation } from 'react-router-dom';
 import ShareModal from "./ShareModal";
 import TripBar from "./TripBar";
+import ChatModal from "./ChatModal";
 
 export const UserContext = createContext({})
 
@@ -15,6 +16,7 @@ export function UserProvider({ children }) {
     const [user, setUser] = useState({});
     const [bottomBar, setBottomBar] = useState("navbar")
     const [shareModal, setShareModal] = useState(false)
+    const [chatModal, setChatModal] = useState(false)
 
     if (localStorage.getItem("user")) {
         setUser(localStorage.getItem("user"))
@@ -38,13 +40,15 @@ export function UserProvider({ children }) {
                 user: user,
                 setUser: setUser,
                 setBottomBar: setBottomBar,
-                setShareModal, setShareModal
+                setShareModal: setShareModal,
+                setChatModal: setChatModal
             }
         }>
             {children}
             {bottomBar === "navbar" && <Navbar />}
-            {bottomBar === "tripBar" && <TripBar setShareModal={setShareModal} setBottomBar={setBottomBar} />}
-            {shareModal && <ShareModal setShareModal={setShareModal} setBottomBar={setBottomBar}/>}
+            {bottomBar === "tripBar" && !chatModal && <TripBar setShareModal={setShareModal} setBottomBar={setBottomBar} />}
+            {shareModal && <ShareModal setShareModal={setShareModal} setBottomBar={setBottomBar} setChatModal={setChatModal} />}
+            {chatModal && <ChatModal />}
         </UserContext.Provider>
     )
 }

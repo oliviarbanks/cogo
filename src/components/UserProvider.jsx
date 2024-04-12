@@ -48,7 +48,7 @@ export function UserProvider({ children }) {
             {bottomBar === "navbar" && <Navbar />}
             {bottomBar === "tripBar" && !chatModal && <TripBar setShareModal={setShareModal} setBottomBar={setBottomBar} />}
             {shareModal && <ShareModal setShareModal={setShareModal} setBottomBar={setBottomBar} setChatModal={setChatModal} />}
-            {chatModal && <ChatModal />}
+            {chatModal && <ChatModal setChatModal={setChatModal} setBottomBar={setBottomBar} />}
         </UserContext.Provider>
     )
 }

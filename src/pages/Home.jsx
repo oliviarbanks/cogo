@@ -15,7 +15,7 @@ const Home = () => {
         <div className="w-full flex items-center justify-center ">
           <h2 className="font-[700] text-[12vw] text-left text-miami-white">Hey, <br />Sweet thang!</h2>
         </div>
-        <div className="absolute top-[95%] left-[20%] w-[60%] z-10">
+        <div className="absolute top-[90%] left-[10%] w-[80%] z-10">
           <Searchbar imageSrc={SearchIcon} placeholder="Search"/>
         </div>
       </div>

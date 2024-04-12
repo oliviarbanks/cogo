@@ -57,11 +57,11 @@ const LoginModal = () => {
          
         <div className="flex flex-row justify-center ">
           <p className="font-light mr-2 ">Forgot Password? </p>
-          <Link to="/forgot-password" className="font-medium underline" >Reset Password</Link>
+          <Link to="/forgot-password" className="font-bold underline" >Reset Password</Link>
         </div>
         <div className="flex flex-row justify-center ">
           <p className="font-light mr-2">Don't have an account?</p>
-          <Link to="/signUp" className="underline font-bold">Sign Up</Link>
+          <Link to="/signUp" className="font-bold underline">Sign Up</Link>
         </div>
       </div>
     </div>

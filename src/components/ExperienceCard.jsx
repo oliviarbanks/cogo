@@ -58,7 +58,7 @@ export default function ExperienceCard({ event, aiInfo }) {
         }
     }
     return (
-        <Link to={`/experience`} state={{event: event, aiInfo: aiInfo}} className="min-h-[260px] h-[30vh] min-w-[220px] w-[55%] bg-white rounded-[8px] flex flex-col items-start">
+        <Link to={`/experience`} state={{event: event, aiInfo: aiInfo, aiImage: aiInfo ? getPicture(aiInfo.keyword) : " "}} className="min-h-[260px] h-[30vh] min-w-[220px] w-[55%] bg-white rounded-[8px] flex flex-col items-start">
             <div
                 style={{
                     backgroundImage: "",

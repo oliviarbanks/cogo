@@ -4,8 +4,7 @@ import { useLocation } from "react-router-dom"
 
 export default function Experience() {
     const { setShareModal, setBottomBar } = useContext(UserContext)
-    const {event, aiInfo} = useLocation().state;
-
+    const {event, aiInfo, aiImage} = useLocation().state;
 
     const handleOpenModal = (e) => {
         e.preventDefault()
@@ -18,7 +17,7 @@ export default function Experience() {
             onClick={() => setShareModal(false)}
             className="bg-eventBg flex flex-col items-start text-miami-white relative overflow-y-auto pb-[95px]">
             <div className="w-full">
-                <img src="/images/experience1.png" />
+                <img src={ aiInfo ? aiImage : event.imageUrl}/>
             </div>
             <div className="px-[42px] w-full ">
                 <div className="flex flex-col gap-[4px] items-start w-[90%] border-b-[1px] border-b-solid border-b-[#7070703D] py-[24px]">

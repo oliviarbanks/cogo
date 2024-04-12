@@ -3,10 +3,10 @@ import ExperienceCard from "../components/ExperienceCard"
 
 export default function Results() {
     const events = [
-        { imageUrl: "/images/card1.jpg", date: "Today", title: "Wine and Dine Kendall", location: "0.3 miles", peopleAttending: 26, time: "7:00 pm" },
-        { imageUrl: "/images/card2.jpg", date: "Today", title: "Co-ed Beach Volley", location: "1.2 miles", peopleAttending: 10, time: "10:00 am" },
-        { imageUrl: "/images/card3.jpg", date: "Tomorrow", title: "Anime Lovers Game Night", location: "2.7 miles", peopleAttending: 7, time: "6:00 pm" },
-        { imageUrl: "/images/card4.jpg", date: "Friday", title: "Harry Potter Marathon!!", location: "3.5 miles", peopleAttending: 20, time: "2:00 pm" },
+        { imageUrl: "/images/card1.jpg", id:"534214", date: "Today", title: "Wine and Dine Kendall", location: "0.3 miles", peopleAttending: 26, time: "7:00 pm" },
+        { imageUrl: "/images/card2.jpg", id:"213412", date: "Today", title: "Co-ed Beach Volley", location: "1.2 miles", peopleAttending: 10, time: "10:00 am" },
+        { imageUrl: "/images/card3.jpg", id:"1612344", date: "Tomorrow", title: "Anime Lovers Game Night", location: "2.7 miles", peopleAttending: 7, time: "6:00 pm" },
+        { imageUrl: "/images/card4.jpg", id:"12346324", date: "Friday", title: "Harry Potter Marathon!!", location: "3.5 miles", peopleAttending: 20, time: "2:00 pm" },
     ]
     return (
         <div className="text-black h-full flex flex-col items-start">

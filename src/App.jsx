@@ -6,6 +6,7 @@ import Map from "./pages/Map";
 import Search from "./pages/Search";
 import Profile from "./pages/Profile";
 import Experience from "./pages/Experience";
+import Results from "./pages/Results";
 import LoginModal from "./components/LoginModal";
 
 import ChatBox from './components/chat/ChatBox'
@@ -22,7 +23,8 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/experience" element={<Experience />} />
-          <Route path="/login" element={<LoginModal/>} />
+          <Route path="/results" element={<Results />} />
+          <Route path="/login" element={<LoginModal />} />
         </Routes>
       </div>
       <Navbar />

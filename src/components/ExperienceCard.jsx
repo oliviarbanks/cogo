@@ -1,16 +1,70 @@
 import { Link, Navigate } from "react-router-dom";
 import { useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 
-export default function ExperienceCard({ event, aiInfo}) {
+export default function ExperienceCard({ event, aiInfo }) {
     const [info, setInfo] = useState()
+    // useQuery({
+    //     queryFn: () => { }
+    // })
+    const getPicture = (keyword) => {
+        switch (keyword) {
+            case "art_gallery":
+                return "/images/activity_art_gallery.jpg"
+            case "amusement_park":
+                return "/images/activity_amusement_park.jpg"
+            case "aquarium":
+                return "/images/activity_aquarium.jpg"
+            case "bakery":
+                return "/images/activity_bakery.jpg"
+            case "cafe":
+                return "/images/activity_cafe.jpg"
+            case "dog_park":
+                return "/images/activity_dog_park.jpg"
+            case "library":
+                return "/images/activity_library.jpg"
+            case "marina":
+                return "/images/activity_marina.jpg"
+            case "museum":
+                return "/images/activity_museum.jpg"
+            case "national_park":
+                return "/images/activity_national_park.jpg"
+            case "night_club":
+                return "/images/activity_night_club.jpg"
+            case "park":
+                return "/images/activity_park.jpg"
+            case "spa":
+                return "/images/activity_spa.jpg"
+            case "store":
+                return "/images/activity_store.jpg"
+            case "zoo":
+                return "/images/activity_zoo.jpg"
+            case "conference":
+                return "/images/events_conference.jpg"
+            case "community":
+                return "/images/events_community.jpg"
+            case "concerts":
+                return "/images/events_concerts.jpg"
+            case "expos":
+                return "/images/events_expos.jpg"
+            case "festivals":
+                return "/images/events_festivals.jpg"
+            case "performing-arts":
+                return "/images/events_performing-arts.jpg"
+            case "sports":
+                return "/images/events_sports.jpg"
+            default:
+                return "/images/events_expos.jpg"
+        }
+    }
     return (
-        <Link to={`/experience`} state={{event: event}} className="min-h-[260px] h-[30vh] min-w-[220px] w-[55%] bg-white rounded-[8px] flex flex-col items-start">
+        <Link to={`/experience`} state={{ event: event }} className="min-h-[260px] h-[30vh] min-w-[220px] w-[55%] bg-white rounded-[8px] flex flex-col items-start">
             <div
                 style={{
                     backgroundImage: "",
                 }}
                 className="bg-gray-400 h-[50%] w-full rounded-[8px] rounded-b-none relative">
-                <img src={`${event.imageUrl}`} className="w-full max-h-[100%] rounded-[8px] rounded-b-none" />
+                <img src={`${aiInfo ? getPicture(aiInfo.keyword) : event.imageUrl}`} className="w-full max-h-[100%] rounded-[8px] rounded-b-none" />
                 <svg className="absolute top-[12px] right-[12px]" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="heart">
                         <path id="Vector" d="M7 3C4.239 3 2 5.216 2 7.95C2 10.157 2.875 15.395 11.488 20.69C11.6423 20.7839 11.8194 20.8335 12 20.8335C12.1806 20.8335 12.3577 20.7839 12.512 20.69C21.125 15.395 22 10.157 22 7.95C22 5.216 19.761 3 17 3C14.239 3 12 6 12 6C12 6 9.761 3 7 3Z" fill="#222222" fillOpacity="0.3" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -30,7 +84,7 @@ export default function ExperienceCard({ event, aiInfo}) {
             </div>
             <div className="bg-white h-[50%] w-full rounded-[8px] rounded-t-none px-[12px] flex flex-col justify-center">
                 <p className="text-[12px] font-[400]">{event.date}</p>
-                <p className="text-[16px] font-[600]">{aiInfo.title}</p>
+                <p className="text-[16px] font-[600]">{aiInfo ? aiInfo.title : event.title}</p>
                 <div className="flex items-center gap-[4px]">
                     <svg className="pt-[2px]" width="18" height="18" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="24px/solid/ic_24_location-marker">

@@ -35,8 +35,14 @@ export default function Results() {
                     return await res.json()
                 })
             if (res.success) {
-                setSuggestionsEvents(res.data.event)
-                setSuggestionsPlaces(res.data.activity)
+                try {
+                    setSuggestionsEvents(res.data.event)
+                    setSuggestionsPlaces(res.data.activity)
+                } catch (e) {
+                    console.log(e)
+                } finally {
+                    console.log('done')
+                }
             }
             return res.data
         } catch (e) {

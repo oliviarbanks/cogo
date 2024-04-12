@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import SearchNextBar from "./SearchNextBar";
 import { Link, useLocation } from 'react-router-dom';
 import ShareModal from "./ShareModal";
+import TripBar from "./TripBar";
 
 export const UserContext = createContext({})
 
@@ -23,7 +24,10 @@ export function UserProvider({ children }) {
         // console.log(location)
         if (location.pathname === "/search") {
             setBottomBar('searchNextBar')
-        } else {
+        } else if (location.pathname === "/experience") {
+            setBottomBar('tripBar')
+        }
+        else {
             setBottomBar('navbar')
         }
     }, [location])
@@ -39,6 +43,7 @@ export function UserProvider({ children }) {
         }>
             {children}
             {bottomBar === "navbar" && <Navbar />}
+            {bottomBar === "tripBar" && <TripBar />}
             {shareModal && <ShareModal />}
         </UserContext.Provider>
     )

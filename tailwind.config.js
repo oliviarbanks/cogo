@@ -61,7 +61,8 @@ export default {
         'circleOrange': "#FF7355",
         'pillBg': "rgba(255, 255, 255, 0.30)",
         'pillBorder': "#F5FFFF",
-        'dalePurp' : "rgba(39, 18, 60, 0.80)"
+        'dalePurp' : "rgba(39, 18, 60, 0.80)",
+        'eventPageGray': "#F5FFFF99"
       },
     },
   },

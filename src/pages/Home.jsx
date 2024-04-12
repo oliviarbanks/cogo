@@ -1,9 +1,8 @@
 
 import { Link } from "react-router-dom";
-import ExperienceCard from "../components/ExperienceCard";
 import { useQuery } from "@tanstack/react-query";
-import ExperienceCard from "../components/ExperienceCard";
 import { useState } from "react";
+import ExperienceCard from "../components/ExperienceCard";
 
 const backendRootUrl = import.meta.env.VITE_BACKEND_URL
 const events = [

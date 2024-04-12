@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function ExperienceCard({ event, aiInfo}) {
     const [info, setInfo] = useState()
     return (
-        <Link to={`/experience`} state={{event: event}} className="min-h-[260px] h-[30vh] min-w-[220px] w-[55%] bg-white rounded-[8px] flex flex-col items-start">
+        <Link to={`/experience`} state={{event: event, aiInfo: aiInfo}} className="min-h-[260px] h-[30vh] min-w-[220px] w-[55%] bg-white rounded-[8px] flex flex-col items-start">
             <div
                 style={{
                     backgroundImage: "",

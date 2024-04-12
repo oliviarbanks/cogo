@@ -4,8 +4,8 @@ import { useLocation } from "react-router-dom"
 
 export default function Experience() {
     const { setShareModal, setBottomBar } = useContext(UserContext)
-    const info = useLocation().state;
-    console.log(info)
+    const {event, aiInfo} = useLocation().state;
+
 
     const handleOpenModal = (e) => {
         e.preventDefault()
@@ -23,7 +23,7 @@ export default function Experience() {
             <div className="px-[42px] w-full ">
                 <div className="flex flex-col gap-[4px] items-start w-[90%] border-b-[1px] border-b-solid border-b-[#7070703D] py-[24px]">
                     <h2 className="text-[14px] font-[400] text-eventPageGray">Event Title</h2>
-                    <p className=" text-[16px] font-[700]">Arcade Competition</p>
+                    <p className=" text-[16px] font-[700]">{aiInfo ? aiInfo.title : event.title}</p>
                 </div>
                 <div className="flex items-start justify-between w-[90%] py-[24px] border-b-[1px] border-b-solid border-b-[#7070703D] gap-[12px]">
                     <div className="flex flex-col items-start">
@@ -59,7 +59,11 @@ export default function Experience() {
                 </div>
                 <div className="flex flex-col items-start py-[24px] gap-[4px]">
                     <h2 className=" text-[16px] font-[700]">Description</h2>
-                    <p className="text-[14px] font-[400] text-[#F5FFFF]">Join the Yogies of Miami at a morning beach sesh. invite your frineds, bring your pets. Join the Yogies of Miami at a morning beach sesh. invite your frineds, bring your pets.</p>
+                    <p className="text-[14px] font-[400] text-[#F5FFFF]">{
+                        aiInfo ? aiInfo.description :
+                        "Join the Yogies of Miami at a morning beach sesh. invite your frineds, bring your pets. Join the Yogies of Miami at a morning beach sesh. invite your frineds, bring your pets."
+                    }
+                    </p>
                 </div>
                 <div className="flex flex-col items-start pb-[24px] gap-[4px]">
                     <h2 className="text-[16px] font-[700]">Going</h2>
